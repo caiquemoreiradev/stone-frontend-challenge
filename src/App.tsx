@@ -1,12 +1,16 @@
-import { useState } from 'react'
-import './App.css'
+import { CurrencyConverterProvider } from "./hooks/useCurrencyConverter"
+import { Home } from "./pages/Home"
+import GlobalStyle from "./styles/GlobalStyles"
 
 function App() {
 
   return (
-    <div>
-      <h1>Hello world!</h1>
-    </div>
+    <>
+      <CurrencyConverterProvider>
+        <Home />
+        <GlobalStyle />
+      </CurrencyConverterProvider>
+    </>
   )
 }
 
