@@ -112,6 +112,71 @@ export const FormContainer = styled.div`
         }
     }
 
+    @media (max-width: 900px) {
+
+        margin-top: 8rem;
+            
+        form {
+
+            margin: 0 auto;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            div.purchase__type {
+
+                width: 50%;
+
+                div.purchase__options {
+
+                    justify-content: space-around;
+                }
+            }
+
+            button {
+
+                width: 400px;
+            }
+            }
+    }
+
+    @media (max-width: 600px) {
+
+        margin-top: 3rem;
+
+        form {
+
+            div.inputs__container {
+
+                flex-direction: column;
+            }
+
+            button {
+
+                width: 300px;
+            }
+        }
+    }
+
+    @media (max-width: 400px) {
+
+        margin-top: 3rem;
+
+        form {
+
+            div.purchase__type {
+
+                width: 100%;
+            }
+
+            button {
+
+                width: 100%
+            }
+        }
+    }
+
     div.result__container {
 
         button {

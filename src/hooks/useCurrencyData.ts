@@ -9,8 +9,6 @@ async function getCurrency(): AxiosPromise<CurrencyResponse> {
         "https://economia.awesomeapi.com.br/last/USD-BRL"
     );
 
-    console.log('Data', response.data.USDBRL)
-
     return response;
 }
 

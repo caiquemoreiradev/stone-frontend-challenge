@@ -26,4 +26,22 @@ export const HeaderContainer = styled.header`
             font-weight: 300;
         }
     }
+
+    @media (max-width: 600px) {
+
+        
+        flex-direction: column;
+        align-items: center;
+
+        gap: 10px;
+    }
+
+    @media (max-width: 450px) {
+
+        
+        p, span {
+
+            display: none;
+        }
+    }
 `;

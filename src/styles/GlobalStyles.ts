@@ -20,6 +20,12 @@ const GlobalStyle = createGlobalStyle`
     background-repeat: no-repeat;
 
     background-position: right top;
+
+    @media (max-width: 900px) {
+      
+      background-image: url('');
+      padding: 24px;
+    }
   }
 `;
 

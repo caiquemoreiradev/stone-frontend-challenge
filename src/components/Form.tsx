@@ -2,12 +2,15 @@ import { useState } from "react"
 import { FormContainer } from "../styles/components/form.styles"
 import { Input } from "./Input"
 
+import NumberFormat from 'react-number-format';
+
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import { useCurrencyConverter } from "../hooks/useCurrencyConverter";
 import { useGetCurrency } from "../hooks/useCurrencyData";
 import { formatMonetaryValue } from "../utils/formatMonetaryValue";
+import { formatPercentageValue } from "../utils/formatPercentageValue";
 
 const schema = yup.object({
     monetaryValue: yup.string().required('é necessário digitar um valor para a conversão').min(1, 'o valor deve conter no mínimo 3 caracteres'),
@@ -132,11 +135,11 @@ export const Form = () => {
                     <div className="result__details">
                         <p>
                             <strong>
-                                Compra no {purchaseType === 'money' ? 'dinheiro' : 'cartão'} e taxa de 
+                                Compra no {purchaseType === 'money' ? 'dinheiro' : 'cartão'} e taxa de
                             </strong>
-                            {(Number(fee)/100).toLocaleString(undefined,{style: 'percent', minimumFractionDigits:2})}
+                            {formatPercentageValue(fee)}
                         </p>
-                        <p><strong>Cotação do dólar:</strong> $ 1.00 = {formatMonetaryValue(Number(data?.data.USDBRL.bid))}</p>
+                        <p><strong>Cotação do dólar:</strong> $ 1.00 = {formatMonetaryValue(data?.data.USDBRL.bid!)}</p>
                     </div>
                 </div>
             )}
